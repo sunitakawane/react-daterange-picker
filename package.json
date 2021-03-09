@@ -19,6 +19,7 @@
 	"dependencies": {
 		"@material-ui/core": "^4.11.3",
 		"@material-ui/icons": "^4.11.2",
+		"@material-ui/styles": "^4.11.3",
 		"date-fns": "^2.19.0"
 	},
 	"devDependencies": {
@@ -26,7 +27,11 @@
 		"@types/react-dom": "^16.8.3",
 		"typescript": "^3.3.4"
 	},
-	
+	"peerDependencies": {
+		"@material-ui/core": "^3.9.2",
+		"react": "^16.8.4",
+		"react-dom": "^16.8.4"
+	},
 	"keywords": [
 		"react",
 		"component",
