@@ -8,7 +8,7 @@ import {
 	WithStyles,
 	withStyles
 } from "@material-ui/core";
-import { getDate, isSameMonth, isToday, format, isWithinRange } from "date-fns";
+import { getDate, isSameMonth, isToday, format, isWithinInterval } from "date-fns";
 import {
 	chunks,
 	getDaysInMonth,
@@ -26,7 +26,8 @@ const WEEK_DAYS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 const styles = (theme: Theme) =>
 	createStyles({
 		root: {
-			width: 290
+			width: 290,
+			borderRadius: "6px",
 		},
 		weekDaysContainer: {
 			marginTop: 10,
@@ -117,13 +118,13 @@ const Month: React.FunctionComponent<MonthProps> = props => {
 
 								return (
 									<Day
-										key={format(day, "MM-DD-YYYY")}
+										key={format(day, "MM-dd-yyyy")}
 										filled={isStart || isEnd}
 										outlined={isToday(day)}
 										highlighted={highlighted && !isRangeOneDay}
 										disabled={
 											!isSameMonth(date, day) ||
-											!isWithinRange(day, minDate, maxDate)
+											!isWithinInterval(day, {start: minDate, end: maxDate})
 										}
 										startOfRange={isStart && !isRangeOneDay}
 										endOfRange={isEnd && !isRangeOneDay}

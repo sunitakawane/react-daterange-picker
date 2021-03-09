@@ -26,8 +26,16 @@ const styles = (theme: Theme) =>
 			textAlign: "center"
 		},
 		divider: {
-			borderLeft: `1px solid ${theme.palette.action.hover}`,
+			borderRight: `1px solid ${theme.palette.action.hover}`,
 			marginBottom: 20
+		},
+		paper:{
+			background: "#FFFFFF",
+			borderRadius: "6px",
+			zIndex: 1000,
+			position: "absolute",
+			left: "411px",
+      top: "370px"
 		}
 	});
 
@@ -70,13 +78,13 @@ const Menu: React.FunctionComponent<MenuProps> = props => {
 	const canNavigateCloser = differenceInCalendarMonths(secondMonth, firstMonth) >= 2;
 	const commonProps = { dateRange, minDate, maxDate, helpers, handlers };
 	return (
-		<Paper elevation={5} square>
-			<Grid container direction="row" wrap="nowrap">
+		<Paper  className={classes.paper} elevation={5} >
+			<Grid container  direction="row" wrap="nowrap">
 				<Grid>
 					<Grid container className={classes.header} alignItems="center">
 						<Grid item className={classes.headerItem}>
 							<Typography variant="subtitle1">
-								{startDate ? format(startDate, "MMMM DD, YYYY") : "Start Date"}
+								{startDate ? format(startDate, "MMMM dd, yyyy") : "Start Date"}
 							</Typography>
 						</Grid>
 						<Grid item className={classes.headerItem}>
@@ -84,12 +92,20 @@ const Menu: React.FunctionComponent<MenuProps> = props => {
 						</Grid>
 						<Grid item className={classes.headerItem}>
 							<Typography variant="subtitle1">
-								{endDate ? format(endDate, "MMMM DD, YYYY") : "End Date"}
+								{endDate ? format(endDate, "MMMM dd, yyyy") : "End Date"}
 							</Typography>
 						</Grid>
 					</Grid>
 					<Divider />
 					<Grid container direction="row" justify="center" wrap="nowrap">
+						<Grid>
+							<DefinedRanges
+								selectedRange={dateRange}
+								ranges={ranges}
+								setRange={setDateRange}
+							/>
+						</Grid>
+						<div className={classes.divider} />
 						<Month
 							{...commonProps}
 							value={firstMonth}
@@ -107,14 +123,8 @@ const Menu: React.FunctionComponent<MenuProps> = props => {
 						/>
 					</Grid>
 				</Grid>
-				<div className={classes.divider} />
-				<Grid>
-					<DefinedRanges
-						selectedRange={dateRange}
-						ranges={ranges}
-						setRange={setDateRange}
-					/>
-				</Grid>
+				
+				
 			</Grid>
 		</Paper>
 	);

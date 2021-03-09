@@ -1,14 +1,14 @@
 {
-	"name": "@matharumanpreet00/react-daterange-picker",
-	"version": "1.0.5",
+	"name": "@skawane/react-material-daterange-picker",
+	"version": "1.0.1",
 	"description": "A react date range picker using Material Design",
 	"author": {
-		"email": "matharumanpreet00@gmail.com",
-		"name": "Manpreet Singh Matharu"
+		"email": "sunitakawane@gmail.com",
+		"name": "Sunita K"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/matharumanpreet00/react-daterange-picker"
+		"url": "https://github.com/sunitakawane/react-daterange-picker"
 	},
 	"main": "build/index.js",
 	"scripts": {
@@ -17,9 +17,9 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"@material-ui/core": "^3.9.2",
-		"@material-ui/icons": "^3.0.2",
-		"date-fns": "^1.30.1"
+		"@material-ui/core": "^4.11.3",
+		"@material-ui/icons": "^4.11.2",
+		"date-fns": "^2.19.0"
 	},
 	"devDependencies": {
 		"@types/react": "^16.8.8",
