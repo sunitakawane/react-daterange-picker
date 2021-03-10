@@ -1,12 +1,14 @@
-import * as React from "react";
 import {
-	IconButton,
-	Typography,
-	createStyles,
-	Theme,
+	createStyles, IconButton,
+
+
+	Theme, Typography,
+
+
 	WithStyles,
 	withStyles
 } from "@material-ui/core";
+import * as React from "react";
 import { combine } from "../utils";
 
 interface DayProps extends WithStyles<typeof styles> {

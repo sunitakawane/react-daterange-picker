@@ -1,20 +1,17 @@
-import React from "react";
 import {
-	Paper,
-	Grid,
-	Typography,
-	Divider,
-	createStyles,
-	WithStyles,
+	createStyles, Divider, Grid, Paper,
 	Theme,
+	Typography,
+	WithStyles,
 	withStyles
 } from "@material-ui/core";
-import { format, differenceInCalendarMonths } from "date-fns";
 import ArrowRightAlt from "@material-ui/icons/ArrowRightAlt";
-import Month from "./Month";
-import DefinedRanges from "./DefinedRanges";
-import { DateRange, DefinedRange, Setter, NavigationAction } from "../types";
+import { differenceInCalendarMonths, format } from "date-fns";
+import React from "react";
 import { MARKERS } from "..";
+import { DateRange, DefinedRange, NavigationAction, Setter } from "../types";
+import DefinedRanges from "./DefinedRanges";
+import Month from "./Month";
 
 const styles = (theme: Theme) =>
 	createStyles({
@@ -35,7 +32,7 @@ const styles = (theme: Theme) =>
 			zIndex: 1000,
 			position: "absolute",
 			left: "411px",
-      top: "370px"
+      		top: "300px"
 		}
 	});
 

@@ -1,16 +1,18 @@
 import {
-	WithStyles,
-	Grid,
-	createStyles,
-	withStyles,
+	createStyles, Grid,
+
+
 	IconButton,
-	Select,
-	MenuItem
+
+	MenuItem, Select, WithStyles,
+
+
+	withStyles
 } from "@material-ui/core";
-import React from "react";
 import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import ChevronRight from "@material-ui/icons/ChevronRight";
-import { setMonth, getMonth, setYear, getYear } from "date-fns";
+import { getMonth, getYear, setMonth, setYear } from "date-fns";
+import React from "react";
 
 interface HeaderProps extends WithStyles<typeof styles> {
 	date: Date;
